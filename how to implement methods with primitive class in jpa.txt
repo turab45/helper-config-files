@@ -1,0 +1,28 @@
+So, we usually perform some user defined tasks in jpa
+like
+findByEmailAndPassword(String email, String pass) -> it returns the user with matching email and password.
+
+That's quite because they are just the user class variables but what if we have something like this
+
+	class user{
+		String name;
+		String pass;
+		Address address;
+	}
+
+	classcAddress{
+		String city
+		String street
+		String zipCode;
+	}
+
+what if i want all the users who are from a particular city? how do we do that?
+
+well it simple
+
+user from particular city
+	List<User> findByAddressCity(String city); // returns all the users form the particular city
+
+List<User> findByAddressStreet(String street// returns all the users form the particular street
+
+List<User> findByAddressZipCode(String zipCode// returns all the users form the particular zipCode
